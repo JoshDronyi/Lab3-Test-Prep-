@@ -78,6 +78,22 @@ namespace Risk
 
             return rollResults;
         }
+         public void Reinforce(Army a, Unit u)
+        {
+            if(u.UnitType == Convert.ToInt32(unitType.infantry))
+            {
+                a.AddInfantry();
+            }
+            else if(u.UnitType == Convert.ToInt32(unitType.calvary))
+            {
+                a.AddCalvary();
+            } 
+            else if(u.UnitType == Convert.ToInt32(unitType.artillary))
+            {
+                a.AddArtillary();
+            }
+            
+        }
 
         public void Fortify(Territory t, int fortifications)
         {

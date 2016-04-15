@@ -8,5 +8,16 @@ namespace Risk
 {
     class Die
     {
+        int dieFace;
+        public Die()
+        {
+
+        }
+
+        public int Face 
+        {
+            get { return dieFace; }
+            set { dieFace = value; }
+        }
     }
 }

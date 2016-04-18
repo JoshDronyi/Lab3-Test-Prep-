@@ -12,6 +12,7 @@ namespace Risk
 {
     public partial class frmMain : Form
     {
+                
         public frmMain()
         {
             InitializeComponent();
@@ -19,9 +20,14 @@ namespace Risk
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-
+        private void DrawObject()
+        {
+            System.Drawing.Graphics g = this.CreateGraphics();
+            // basically this method will check the current object type, then draw it's appropriate shape and model
+            // for now, units will be circles, and territories will be squares
+        }
     }
 }

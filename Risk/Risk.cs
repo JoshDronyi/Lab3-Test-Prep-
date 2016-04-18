@@ -10,5 +10,7 @@ namespace Risk
     {
         public RiskBoard Board;
         public List<Player> Players;
+
+
     }
 }

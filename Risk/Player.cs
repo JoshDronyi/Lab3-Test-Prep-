@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Risk
 {
-    class Player
+    public class Player
     {
-                List<Territory> playerTerritories  = new List <Territories>;
+        List<Territory> playerTerritories  = new List <Territory>();
         Random random = new Random(1);
-
-
 
         //Necessary empty Player constructor
         public Player() 
@@ -30,7 +28,7 @@ namespace Risk
             bool gotIt = false;
             foreach(Territory tory in playerTerritories)
             {
-                if (tory.Name = t.Name)
+                if (tory.Name.Equals(t.Name))
                     gotIt = true;
             }
 
@@ -99,15 +97,15 @@ namespace Risk
         {
             if(fortifications == Convert.ToInt32(unitType.infantry))
             {
-                t.Army.addInfantry();
+                //t.StandingArmy.addInfantry();
             }
             else if(fortifications == Convert.ToInt32(unitType.calvary))
             {
-                t.Army.addCalvary();
+                //t.StandingArmy.addCalvary();
             }
             else
             {
-                t.Army.addArtillary();
+                //t.StandingArmy.addArtillary();
             }
         }
 

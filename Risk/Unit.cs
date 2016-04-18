@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Risk
 {
-    class Unit
+    public class Unit
     {
         int strength;
         int type;

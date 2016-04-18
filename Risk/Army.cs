@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Risk
 {
-    class Army
+    public class Army
     {
         List<Unit> armyUnits = new List<Unit>();
         public Army() 

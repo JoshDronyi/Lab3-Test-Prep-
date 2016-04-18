@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Risk
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

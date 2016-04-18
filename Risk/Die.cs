@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Risk
 {
-    class Die
+    public class Die
     {
         int dieFace;
         public Die()

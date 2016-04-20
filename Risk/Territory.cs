@@ -14,12 +14,9 @@ namespace Risk
         public Player Owner { get; set; }
         public Army StandingArmy { get; set; }
 
-        public Territory(string n /*, Player o, Army s*/)
+        public Territory(string n)
         {
             this.Name = n;
-            //this.Continent = c;
-            //this.Owner = o;
-            //this.StandingArmy = s;
         }
     }
 }

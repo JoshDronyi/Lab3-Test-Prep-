@@ -12,7 +12,8 @@ namespace Risk
 {
     public partial class frmMain : Form
     {
-                
+        Risk game = new Risk(2);
+                   
         public frmMain()
         {
             InitializeComponent();
@@ -23,11 +24,19 @@ namespace Risk
             
         }
 
-        private void DrawObject()
+        private void gpxNAmerica_Enter(object sender, EventArgs e)
         {
-            System.Drawing.Graphics g = this.CreateGraphics();
-            // basically this method will check the current object type, then draw it's appropriate shape and model
-            // for now, units will be circles, and territories will be squares
+
+        }
+
+        private void contextMenuPlayerMoves_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void attackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

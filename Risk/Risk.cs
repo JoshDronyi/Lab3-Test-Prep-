@@ -8,9 +8,23 @@ namespace Risk
 {
     public class Risk
     {
-        public RiskBoard Board;
-        public List<Player> Players;
+        private RiskBoard Board { get; set; }
+        private List<Player> Players { get; set; }
 
+        public Risk(int numPlayers)
+        {
+            Board = new RiskBoard();
+            Players = new List<Player>(numPlayers);
+        }
 
+        public Player getCurrentPlayer()
+        {
+            return Players[0];
+        }
+
+        public void PlayerTurn()
+        {
+
+        }
     }
 }

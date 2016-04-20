@@ -8,13 +8,16 @@ namespace Risk
 {
     public class Player
     {
-        List<Territory> playerTerritories  = new List <Territory>();
+        public string Name;
+        public int HomeTerritory;
+        private List<Territory> playerTerritories  = new List <Territory>();
         Random random = new Random(1);
 
         //Necessary empty Player constructor
-        public Player() 
+        public Player(string n, int h) 
         {
-
+            this.Name = n;
+            this.HomeTerritory = h;
         }
          enum unitType
         {
@@ -28,8 +31,10 @@ namespace Risk
             bool gotIt = false;
             foreach(Territory tory in playerTerritories)
             {
+                /*
                 if (tory.Name.Equals(t.Name))
                     gotIt = true;
+                    */
             }
 
             return gotIt;

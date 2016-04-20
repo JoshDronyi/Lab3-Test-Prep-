@@ -37,6 +37,7 @@
             this.gpxEurope = new System.Windows.Forms.GroupBox();
             this.gpxAsia = new System.Windows.Forms.GroupBox();
             this.gpxAfrica = new System.Windows.Forms.GroupBox();
+            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuPlayerMoves.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +56,10 @@
             // 
             this.contextMenuPlayerMoves.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.attackToolStripMenuItem,
-            this.defendToolStripMenuItem});
+            this.defendToolStripMenuItem,
+            this.informationToolStripMenuItem});
             this.contextMenuPlayerMoves.Name = "contextMenuPlayerMoves";
-            this.contextMenuPlayerMoves.Size = new System.Drawing.Size(109, 48);
+            this.contextMenuPlayerMoves.Size = new System.Drawing.Size(153, 92);
             this.contextMenuPlayerMoves.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuPlayerMoves_Opening);
             // 
             // attackToolStripMenuItem
@@ -113,6 +115,13 @@
             this.gpxAfrica.TabStop = false;
             this.gpxAfrica.Text = "Africa";
             // 
+            // informationToolStripMenuItem
+            // 
+            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informationToolStripMenuItem.Text = "Information";
+            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +150,7 @@
         private System.Windows.Forms.GroupBox gpxEurope;
         private System.Windows.Forms.GroupBox gpxAsia;
         private System.Windows.Forms.GroupBox gpxAfrica;
+        private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
     }
 }
 

@@ -9,7 +9,7 @@ namespace Risk
 {
     public class Territory
     {
-        public string Name { get; set; }
+        private string Name { get; set; }
         //public Enum Continent { get; set; }
         public Player Owner { get; set; }
         public Army StandingArmy { get; set; }
@@ -17,6 +17,12 @@ namespace Risk
         public Territory(string n)
         {
             this.Name = n;
+        }
+
+        public string PrintInfo()
+        {
+            return ("Name: " + Name + "\n" +
+                   "Owner: " + Owner.Name);
         }
     }
 }

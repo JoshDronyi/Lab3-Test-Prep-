@@ -40,6 +40,14 @@ namespace Risk
             };
         }
 
+        public void InitPlayers(List<Player> p)
+        {
+            for (int i = 0; i < p.Count; i++)
+            {
+                Territories[p[i].HomeTerritory].Owner = p[i];
+            }
+        }
+
         public bool? Connected(Territory a, Territory b)
         {
             // basically here we'll get each index value (ex. france is 3, germany is 4)

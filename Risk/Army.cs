@@ -8,7 +8,9 @@ namespace Risk
 {
     public class Army
     {
-        List<Unit> armyUnits = new List<Unit>();
+        private List<Unit> armyUnits = new List<Unit>();
+
+
         public Army() 
         {
 

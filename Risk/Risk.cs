@@ -8,13 +8,21 @@ namespace Risk
 {
     public class Risk
     {
-        private RiskBoard Board { get; set; }
-        private List<Player> Players { get; set; }
+        public RiskBoard Board { get; set; }
+        public List<Player> Players { get; set; }
 
         public Risk(int numPlayers)
         {
             Board = new RiskBoard();
             Players = new List<Player>(numPlayers);
+        }
+
+        public void init()
+        {
+            Players.Add(new Player("Sam's Empire", 0));
+            Players.Add(new Player("Josh's Empire", 4));
+
+            Board.InitPlayers(Players);
         }
 
         public Player getCurrentPlayer()

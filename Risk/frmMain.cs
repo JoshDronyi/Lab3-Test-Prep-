@@ -36,7 +36,14 @@ namespace Risk
 
         private void attackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            // if 
+        }
+
+        private void informationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // selected groupbox -> selected territory -> print info method
+            MessageBox.Show(e.GetType().ToString());
+            MessageBox.Show(sender.GetType().ToString());
         }
     }
 }

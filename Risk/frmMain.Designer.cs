@@ -28,105 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.gpxNAmerica = new System.Windows.Forms.GroupBox();
-            this.contextMenuPlayerMoves = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.attackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.defendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gpxSAmerica = new System.Windows.Forms.GroupBox();
             this.gpxEurope = new System.Windows.Forms.GroupBox();
             this.gpxAsia = new System.Windows.Forms.GroupBox();
             this.gpxAfrica = new System.Windows.Forms.GroupBox();
-            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuPlayerMoves.SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.chkNAmerica = new System.Windows.Forms.CheckBox();
+            this.chkEurope = new System.Windows.Forms.CheckBox();
+            this.chkAsia = new System.Windows.Forms.CheckBox();
+            this.gpxNAmerica.SuspendLayout();
+            this.gpxEurope.SuspendLayout();
+            this.gpxAsia.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpxNAmerica
             // 
-            this.gpxNAmerica.ContextMenuStrip = this.contextMenuPlayerMoves;
+            this.gpxNAmerica.BackColor = System.Drawing.Color.Transparent;
+            this.gpxNAmerica.Controls.Add(this.chkNAmerica);
+            this.gpxNAmerica.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.gpxNAmerica.Location = new System.Drawing.Point(12, 12);
             this.gpxNAmerica.Name = "gpxNAmerica";
-            this.gpxNAmerica.Size = new System.Drawing.Size(153, 100);
+            this.gpxNAmerica.Size = new System.Drawing.Size(337, 286);
             this.gpxNAmerica.TabIndex = 0;
             this.gpxNAmerica.TabStop = false;
             this.gpxNAmerica.Text = "North America";
             this.gpxNAmerica.Enter += new System.EventHandler(this.gpxNAmerica_Enter);
             // 
-            // contextMenuPlayerMoves
-            // 
-            this.contextMenuPlayerMoves.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.attackToolStripMenuItem,
-            this.defendToolStripMenuItem,
-            this.informationToolStripMenuItem});
-            this.contextMenuPlayerMoves.Name = "contextMenuPlayerMoves";
-            this.contextMenuPlayerMoves.Size = new System.Drawing.Size(153, 92);
-            this.contextMenuPlayerMoves.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuPlayerMoves_Opening);
-            // 
-            // attackToolStripMenuItem
-            // 
-            this.attackToolStripMenuItem.Name = "attackToolStripMenuItem";
-            this.attackToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.attackToolStripMenuItem.Text = "Attack";
-            this.attackToolStripMenuItem.Click += new System.EventHandler(this.attackToolStripMenuItem_Click);
-            // 
-            // defendToolStripMenuItem
-            // 
-            this.defendToolStripMenuItem.Name = "defendToolStripMenuItem";
-            this.defendToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.defendToolStripMenuItem.Text = "Fortify";
-            // 
             // gpxSAmerica
             // 
-            this.gpxSAmerica.ContextMenuStrip = this.contextMenuPlayerMoves;
-            this.gpxSAmerica.Location = new System.Drawing.Point(30, 118);
+            this.gpxSAmerica.BackColor = System.Drawing.Color.Transparent;
+            this.gpxSAmerica.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.gpxSAmerica.Location = new System.Drawing.Point(168, 304);
             this.gpxSAmerica.Name = "gpxSAmerica";
-            this.gpxSAmerica.Size = new System.Drawing.Size(109, 134);
+            this.gpxSAmerica.Size = new System.Drawing.Size(198, 247);
             this.gpxSAmerica.TabIndex = 1;
             this.gpxSAmerica.TabStop = false;
             this.gpxSAmerica.Text = "South America";
             // 
             // gpxEurope
             // 
-            this.gpxEurope.ContextMenuStrip = this.contextMenuPlayerMoves;
-            this.gpxEurope.Location = new System.Drawing.Point(218, 12);
+            this.gpxEurope.BackColor = System.Drawing.Color.Transparent;
+            this.gpxEurope.Controls.Add(this.chkEurope);
+            this.gpxEurope.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.gpxEurope.Location = new System.Drawing.Point(355, 90);
             this.gpxEurope.Name = "gpxEurope";
-            this.gpxEurope.Size = new System.Drawing.Size(118, 100);
+            this.gpxEurope.Size = new System.Drawing.Size(246, 201);
             this.gpxEurope.TabIndex = 2;
             this.gpxEurope.TabStop = false;
             this.gpxEurope.Text = "Europe";
+            this.gpxEurope.Enter += new System.EventHandler(this.gpxEurope_Enter);
             // 
             // gpxAsia
             // 
-            this.gpxAsia.ContextMenuStrip = this.contextMenuPlayerMoves;
-            this.gpxAsia.Location = new System.Drawing.Point(342, 12);
+            this.gpxAsia.BackColor = System.Drawing.Color.Transparent;
+            this.gpxAsia.Controls.Add(this.chkAsia);
+            this.gpxAsia.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.gpxAsia.Location = new System.Drawing.Point(607, 23);
             this.gpxAsia.Name = "gpxAsia";
-            this.gpxAsia.Size = new System.Drawing.Size(200, 100);
+            this.gpxAsia.Size = new System.Drawing.Size(309, 343);
             this.gpxAsia.TabIndex = 3;
             this.gpxAsia.TabStop = false;
             this.gpxAsia.Text = "Asia";
             // 
             // gpxAfrica
             // 
-            this.gpxAfrica.ContextMenuStrip = this.contextMenuPlayerMoves;
-            this.gpxAfrica.Location = new System.Drawing.Point(255, 118);
+            this.gpxAfrica.BackColor = System.Drawing.Color.Transparent;
+            this.gpxAfrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.gpxAfrica.Location = new System.Drawing.Point(391, 290);
             this.gpxAfrica.Name = "gpxAfrica";
-            this.gpxAfrica.Size = new System.Drawing.Size(200, 134);
+            this.gpxAfrica.Size = new System.Drawing.Size(210, 261);
             this.gpxAfrica.TabIndex = 4;
             this.gpxAfrica.TabStop = false;
             this.gpxAfrica.Text = "Africa";
             // 
-            // informationToolStripMenuItem
+            // button1
             // 
-            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.informationToolStripMenuItem.Text = "Information";
-            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
+            this.button1.Location = new System.Drawing.Point(12, 328);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // chkNAmerica
+            // 
+            this.chkNAmerica.AutoSize = true;
+            this.chkNAmerica.Location = new System.Drawing.Point(6, 37);
+            this.chkNAmerica.Name = "chkNAmerica";
+            this.chkNAmerica.Size = new System.Drawing.Size(15, 14);
+            this.chkNAmerica.TabIndex = 0;
+            this.chkNAmerica.UseVisualStyleBackColor = true;
+            // 
+            // chkEurope
+            // 
+            this.chkEurope.AutoSize = true;
+            this.chkEurope.Location = new System.Drawing.Point(6, 37);
+            this.chkEurope.Name = "chkEurope";
+            this.chkEurope.Size = new System.Drawing.Size(15, 14);
+            this.chkEurope.TabIndex = 0;
+            this.chkEurope.UseVisualStyleBackColor = true;
+            // 
+            // chkAsia
+            // 
+            this.chkAsia.AutoSize = true;
+            this.chkAsia.Location = new System.Drawing.Point(7, 38);
+            this.chkAsia.Name = "chkAsia";
+            this.chkAsia.Size = new System.Drawing.Size(166, 35);
+            this.chkAsia.TabIndex = 0;
+            this.chkAsia.Text = "checkBox1";
+            this.chkAsia.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 325);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(945, 563);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gpxAfrica);
             this.Controls.Add(this.gpxAsia);
             this.Controls.Add(this.gpxEurope);
@@ -135,7 +156,12 @@
             this.Name = "frmMain";
             this.Text = "Risk!";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.contextMenuPlayerMoves.ResumeLayout(false);
+            this.gpxNAmerica.ResumeLayout(false);
+            this.gpxNAmerica.PerformLayout();
+            this.gpxEurope.ResumeLayout(false);
+            this.gpxEurope.PerformLayout();
+            this.gpxAsia.ResumeLayout(false);
+            this.gpxAsia.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -143,14 +169,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpxNAmerica;
-        private System.Windows.Forms.ContextMenuStrip contextMenuPlayerMoves;
-        private System.Windows.Forms.ToolStripMenuItem attackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem defendToolStripMenuItem;
         private System.Windows.Forms.GroupBox gpxSAmerica;
         private System.Windows.Forms.GroupBox gpxEurope;
         private System.Windows.Forms.GroupBox gpxAsia;
         private System.Windows.Forms.GroupBox gpxAfrica;
-        private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
+        private System.Windows.Forms.CheckBox chkNAmerica;
+        private System.Windows.Forms.CheckBox chkEurope;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chkAsia;
     }
 }
 

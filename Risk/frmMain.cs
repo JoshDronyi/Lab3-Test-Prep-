@@ -13,6 +13,7 @@ namespace Risk
     public partial class frmMain : Form
     {
         Risk game = new Risk(2);
+        //GroupBox selected;
                    
         public frmMain()
         {
@@ -29,6 +30,11 @@ namespace Risk
 
         }
 
+        private void gpxNAmerica_MouseClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("ayyy lmao");
+        }
+
         private void contextMenuPlayerMoves_Opening(object sender, CancelEventArgs e)
         {
 
@@ -42,8 +48,16 @@ namespace Risk
         private void informationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // selected groupbox -> selected territory -> print info method
+            //gpxNAmerica.MouseClick;
             MessageBox.Show(e.GetType().ToString());
             MessageBox.Show(sender.GetType().ToString());
+            //MessageBox.Show(selected.ToString());
+            //MessageBox.Show("( ͡° ͜ʖ ͡°)");
+        }
+
+        private void gpxEurope_Enter(object sender, EventArgs e)
+        {
+            MessageBox.Show("ayyy lmao");
         }
     }
 }

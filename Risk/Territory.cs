@@ -29,10 +29,16 @@ namespace Risk
                 return ("Name:  " + Name + "\n" +
                         "Owner: Unclaimed");
             }
+            else if (StandingArmy == null)
+            {
+                return ("Name:  " + Name + "\n" +
+                        "Owner: " + Owner.Name + "\n" +
+                        "Army:  No garrison present.");
+            }
             else
             {
                 return ("Name:  " + Name + "\n" +
-                        "Owner: " + Owner.Name + "\n" + 
+                        "Owner: " + Owner.Name + "\n" +
                         "Army:  " + StandingArmy);
             }            
         }

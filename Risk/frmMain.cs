@@ -37,7 +37,17 @@ namespace Risk
                             pictureBox.BackColor = Color.Red;
                             pictureBox.Location = new Point((g.Width / 2), (g.Height / 2)); ;
                             g.Controls.Add(pictureBox);
-                        } 
+                        }
+                        if (game.Board.Territories[g.TabIndex].StandingArmy == null && g.HasChildren)
+                        {
+                            foreach (Control c in g.Controls)
+                            {
+                                if (c is PictureBox)
+                                {
+                                    g.Controls.Remove(c);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -50,6 +60,25 @@ namespace Risk
         private void frmMain_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void ToggleCheckboxes()
+        {
+            foreach (Control g in this.Controls)
+            {
+                if (g is GroupBox)
+                {
+                    foreach (Control c in g.Controls)
+                    {
+                        if (c is CheckBox)
+                        {
+                            CheckBox x = (CheckBox)c;
+
+                            x.Checked = false;
+                        }
+                    }
+                }
+            }
         }
         
         private void btnAttack_Click(object sender, EventArgs e)
@@ -97,6 +126,7 @@ namespace Risk
 
             game.Board.AnnexTerritory(Attacker, Base, Target);
             LoadPieces();
+            ToggleCheckboxes();
         }
 
         private void btnInfo_Click(object sender, EventArgs e) 

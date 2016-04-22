@@ -69,5 +69,10 @@ namespace Risk
             target.StandingArmy = playerBase.StandingArmy;
             playerBase.StandingArmy = null;
         }
+
+        public void InvadeTerritory(Player attacker, Player defender, Territory attackerBase, Territory target)
+        {
+
+        }
     }
 }

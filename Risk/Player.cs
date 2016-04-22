@@ -47,26 +47,6 @@ namespace Risk
 
         public Die[] Attack()
         {
-           Die[] rollResults = new Die[2];
-
-            //Create Die objects
-            Die firstDie = new Die();
-            Die secondDie = new Die();
-
-            //roll two Die since the player is attacking
-            firstDie.Face = random.Next(1,7);
-            secondDie.Face = random.Next(1,7);
-
-            //put the results of the Die in results array
-            rollResults[0] = firstDie;
-            rollResults[1] = secondDie;
-
-            return rollResults;
-
-        }
-
-        public Die[] Defend()
-        {
             Die[] rollResults = new Die[3];
 
             // Create Die Objects
@@ -75,9 +55,9 @@ namespace Risk
             Die thirdDie = new Die();
 
             //roll three Die since the plaer is defending
-            firstDie.Face = random.Next(1,7);
-            secondDie.Face = random.Next(1,7);
-            thirdDie.Face = random.Next(1,7);
+            firstDie.Face = random.Next(1, 7);
+            secondDie.Face = random.Next(1, 7);
+            thirdDie.Face = random.Next(1, 7);
 
             //store the results in a results array
             rollResults[0] = firstDie;
@@ -86,7 +66,27 @@ namespace Risk
 
             return rollResults;
         }
-         public void Reinforce(Army a, Unit u)
+
+        public Die[] Defend()
+        {
+            Die[] rollResults = new Die[2];
+
+            //Create Die objects
+            Die firstDie = new Die();
+            Die secondDie = new Die();
+
+            //roll two Die since the player is attacking
+            firstDie.Face = random.Next(1, 7);
+            secondDie.Face = random.Next(1, 7);
+
+            //put the results of the Die in results array
+            rollResults[0] = firstDie;
+            rollResults[1] = secondDie;
+
+            return rollResults;
+        }
+        
+        public void Reinforce(Army a, Unit u)
         {
             if(u.UnitType == Convert.ToInt32(unitType.infantry))
             {

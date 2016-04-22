@@ -124,7 +124,15 @@ namespace Risk
                 }
             }
 
-            game.Board.AnnexTerritory(Attacker, Base, Target);
+            if (Target.Owner == null)
+            {
+                game.Board.AnnexTerritory(Attacker, Base, Target);
+            }
+            if (Target.Owner == Defender)
+            {
+                game.Board.InvadeTerritory(Attacker, Defender, Base, Target);
+            }
+            
             LoadPieces();
             ToggleCheckboxes();
         }

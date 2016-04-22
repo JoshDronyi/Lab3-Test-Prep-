@@ -14,7 +14,10 @@ namespace Risk
         public List<Army> ArmyList { get; set; }
         Random random = new Random(1);
 
-        //Necessary empty Player constructor
+        public Player()
+        {
+        }
+
         public Player(string n, int h) 
         {
             this.Name = n;

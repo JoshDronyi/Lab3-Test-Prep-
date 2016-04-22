@@ -62,6 +62,12 @@ namespace Risk
             //return NeighborMatrix[Territories.IndexOf(a), Territories.IndexOf(b)];
             return true;
         }
-        
+
+        public void AnnexTerritory(Player player, Territory playerBase, Territory target)
+        {
+            target.Owner = player;
+            target.StandingArmy = playerBase.StandingArmy;
+            playerBase.StandingArmy = null;
+        }
     }
 }

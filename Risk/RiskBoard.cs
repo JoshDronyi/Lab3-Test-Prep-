@@ -15,9 +15,11 @@ namespace Risk
         {
             init();
         }
-
+        
         public void init()
         {
+            Territories = new List<Territory>();
+
             try
             {
                 Territories.Add(new Territory("North America"));
@@ -57,7 +59,8 @@ namespace Risk
         {
             // basically here we'll get each index value (ex. france is 3, germany is 4)
             // NeighborMatrix[3, 4] is true, therefore Connected(Territories<3>, Territories<4>) will return true
-            return NeighborMatrix[Territories.IndexOf(a), Territories.IndexOf(b)];
+            //return NeighborMatrix[Territories.IndexOf(a), Territories.IndexOf(b)];
+            return true;
         }
         
     }

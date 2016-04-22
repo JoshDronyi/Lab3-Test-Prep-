@@ -19,6 +19,7 @@ namespace Risk
         {
             this.Name = n;
             this.HomeTerritory = h;
+            ArmyList = new List<Army>();
         }
          enum unitType
         {

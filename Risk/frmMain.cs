@@ -17,6 +17,7 @@ namespace Risk
         public frmMain()
         {
             InitializeComponent();
+            game.init();
         }
 
         private void DrawUnit(PaintEventArgs e)
@@ -38,42 +39,7 @@ namespace Risk
         {
             
         }
-
-        private void gpxNAmerica_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gpxNAmerica_MouseClick(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void contextMenuPlayerMoves_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void attackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // if 
-        }
-
-        private void informationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // selected groupbox -> selected territory -> print info method
-            //gpxNAmerica.MouseClick;
-            MessageBox.Show(e.GetType().ToString());
-            MessageBox.Show(sender.GetType().ToString());
-            //MessageBox.Show(selected.ToString());
-            //MessageBox.Show("( ͡° ͜ʖ ͡°)");
-        }
-
-        private void gpxEurope_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void btnAttack_Click(object sender, EventArgs e)
         {
 
@@ -81,21 +47,18 @@ namespace Risk
 
         private void btnInfo_Click(object sender, EventArgs e) 
         {
-            /*
             try 
             {
                 foreach (Control g in this.Controls)
                 {
-                    MessageBox.Show(g.TabIndex.ToString());
                     if (g is GroupBox) 
                     {
-                        MessageBox.Show(g.ToString());
                         foreach (CheckBox c in g.Controls)
                         {
-                            MessageBox.Show(c.ToString());
                             if (c.Checked)
                             {
-                                MessageBox.Show(game.Board.Territories[0].PrintInfo());
+                                MessageBox.Show(game.Board.Territories[g.TabIndex].PrintInfo());
+                                c.Checked = false;
                             }
                         }
                     }                    
@@ -105,18 +68,6 @@ namespace Risk
             {
                 MessageBox.Show("Error, " + i.ToString());
             }
-             */
-            MessageBox.Show(game.Board.Territories[0].PrintInfo());
-            /*
-            try
-            {
-                
-            }
-            catch
-            {
-                MessageBox.Show("Please select a territory before using this button.");
-            }     
-             */
         }
     }
 }

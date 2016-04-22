@@ -15,14 +15,14 @@ namespace Risk
         {
             Board = new RiskBoard();
             Players = new List<Player>(numPlayers);
-            Board.init();
         }
 
         public void init()
         {
             Players.Add(new Player("Sam's Empire", 0));
-            Players.Add(new Player("Josh's Empire", 4));
+            Players.Add(new Player("Josh's Empire", 3));
 
+            Board.init();
             Board.InitPlayers(Players);
         }
 

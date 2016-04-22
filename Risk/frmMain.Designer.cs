@@ -97,7 +97,7 @@
             this.gpxEurope.TabIndex = 2;
             this.gpxEurope.TabStop = false;
             this.gpxEurope.Text = "Europe";
-            this.gpxEurope.Enter += new System.EventHandler(this.gpxEurope_Enter);
+            //this.gpxEurope.Enter += new System.EventHandler(this.gpxEurope_Enter);
             // 
             // chkEurope
             // 

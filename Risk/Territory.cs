@@ -20,8 +20,16 @@ namespace Risk
 
         public string PrintInfo()
         {
-            return ("Name:  " + Name + "\n" +
-                    "Owner: " + Owner.Name + "\n" );
+            if (Owner == null)
+            {
+                return ("Name:  " + Name + "\n" +
+                        "Owner: Unclaimed");
+            }
+            else
+            {
+                return ("Name:  " + Name + "\n" +
+                    "Owner: " + Owner.Name + "\n");
+            }            
         }
     }
 }

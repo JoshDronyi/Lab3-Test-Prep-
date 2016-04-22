@@ -18,20 +18,32 @@ namespace Risk
         {
             InitializeComponent();
             game.init();
-        }
-
-        private void DrawUnit(PaintEventArgs e)
-        {
-            Pen myPen;
+            LoadPieces();
         }
 
         private void LoadPieces()
         {
-            foreach (GroupBox g in this.Controls)
+            try
             {
-                if (game.Board.Territories[g.TabIndex].StandingArmy != null) {
-                    PictureBox p = new PictureBox();
+                foreach (Control g in this.Controls)
+                {
+                    if (g is GroupBox)
+                    {
+                        if (game.Board.Territories[g.TabIndex].StandingArmy != null)
+                        {
+                            PictureBox pictureBox = new PictureBox();
+                            pictureBox.Size = new Size(25, 25);
+                            pictureBox.BorderStyle = BorderStyle.FixedSingle;
+                            pictureBox.BackColor = Color.Red;
+                            pictureBox.Location = new Point((g.Width / 2), (g.Height / 2)); ;
+                            g.Controls.Add(pictureBox);
+                        } 
+                    }
                 }
+            }
+            catch (InvalidCastException i)
+            {
+                MessageBox.Show("Error, " + i.ToString());
             }
         }
 
@@ -53,12 +65,16 @@ namespace Risk
                 {
                     if (g is GroupBox) 
                     {
-                        foreach (CheckBox c in g.Controls)
+                        foreach (Control c in g.Controls)
                         {
-                            if (c.Checked)
+                            if (c is CheckBox)
                             {
-                                MessageBox.Show(game.Board.Territories[g.TabIndex].PrintInfo());
-                                c.Checked = false;
+                                CheckBox x = (CheckBox) c;
+                                if (x.Checked)
+                                {
+                                    MessageBox.Show(game.Board.Territories[g.TabIndex].PrintInfo());
+                                    x.Checked = false;
+                                }                                
                             }
                         }
                     }                    

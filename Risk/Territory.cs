@@ -28,7 +28,8 @@ namespace Risk
             else
             {
                 return ("Name:  " + Name + "\n" +
-                    "Owner: " + Owner.Name + "\n");
+                        "Owner: " + Owner.Name + "\n" + 
+                        "Army:  " + StandingArmy);
             }            
         }
     }

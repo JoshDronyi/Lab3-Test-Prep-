@@ -8,8 +8,8 @@ namespace Risk
 {
     public class RiskBoard
     {
-        private List<Territory> Territories { get; set; }
-        private bool?[,] NeighborMatrix { get; set; }
+        public List<Territory> Territories { get; set; }
+        public bool?[,] NeighborMatrix { get; set; }
 
         public RiskBoard()
         {
@@ -25,18 +25,21 @@ namespace Risk
                 Territories.Add(new Territory("Europe"));
                 Territories.Add(new Territory("Asia"));
                 Territories.Add(new Territory("Africa"));
-            } catch (NullReferenceException)
+                Territories.Add(new Territory("Australia"));
+            } 
+            catch (NullReferenceException)
             {
                 
             }            
 
             NeighborMatrix = new bool?[,]
             {
-                { null,  true,  true,  false, false },
-                { true,  null,  false, false, true  },
-                { true,  false, null,  true,  true  },
-                { false, false, true,  null,  true  },
-                { false, true,  true,  true,  null  }
+                { null,  true,  true,  false, false, false },
+                { true,  null,  false, false, true,  false },
+                { true,  false, null,  true,  true,  false },
+                { false, false, true,  null,  true,  true  },
+                { false, true,  true,  true,  null,  false },
+                { false, false, false, true,  false, null  }
             };
         }
 
@@ -45,6 +48,8 @@ namespace Risk
             for (int i = 0; i < p.Count; i++)
             {
                 Territories[p[i].HomeTerritory].Owner = p[i];
+                p[i].ArmyList.Add(new Army());
+                Territories[p[i].HomeTerritory].StandingArmy = p[i].ArmyList[0];
             }
         }
 

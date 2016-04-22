@@ -12,12 +12,22 @@ namespace Risk
 {
     public partial class frmMain : Form
     {
-        Risk game = new Risk(2);
+        public Risk game = new Risk(2);
         //GroupBox selected;
                    
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void LoadPieces()
+        {
+            foreach (GroupBox g in this.Controls)
+            {
+                if (game.Board.Territories[g.TabIndex].StandingArmy != null) {
+                    //g.TabIndex
+                }
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -32,7 +42,7 @@ namespace Risk
 
         private void gpxNAmerica_MouseClick(object sender, EventArgs e)
         {
-            MessageBox.Show("ayyy lmao");
+            
         }
 
         private void contextMenuPlayerMoves_Opening(object sender, CancelEventArgs e)
@@ -57,7 +67,12 @@ namespace Risk
 
         private void gpxEurope_Enter(object sender, EventArgs e)
         {
-            MessageBox.Show("ayyy lmao");
+            
+        }
+
+        private void btnAttack_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,10 +10,9 @@ namespace Risk
     {
         private List<Unit> armyUnits = new List<Unit>();
 
-
         public Army() 
         {
-
+            AddInfantry();
         }
         enum unitType
         {

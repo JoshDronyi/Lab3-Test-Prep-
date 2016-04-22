@@ -8,9 +8,10 @@ namespace Risk
 {
     public class Player
     {
-        public string Name;
-        public int HomeTerritory;
-        private List<Territory> playerTerritories  = new List <Territory>();
+        public string Name { get; set; }
+        public int HomeTerritory { get; set; }
+        public List<Territory> playerTerritories { get; set; }
+        public List<Army> ArmyList { get; set; }
         Random random = new Random(1);
 
         //Necessary empty Player constructor

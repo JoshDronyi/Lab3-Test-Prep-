@@ -41,9 +41,15 @@
             this.gpxAustralia = new System.Windows.Forms.GroupBox();
             this.btnFortify = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.chkSAmerica = new System.Windows.Forms.CheckBox();
+            this.chkAfrica = new System.Windows.Forms.CheckBox();
+            this.chkAustralia = new System.Windows.Forms.CheckBox();
             this.gpxNAmerica.SuspendLayout();
+            this.gpxSAmerica.SuspendLayout();
             this.gpxEurope.SuspendLayout();
             this.gpxAsia.SuspendLayout();
+            this.gpxAfrica.SuspendLayout();
+            this.gpxAustralia.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpxNAmerica
@@ -71,6 +77,7 @@
             // gpxSAmerica
             // 
             this.gpxSAmerica.BackColor = System.Drawing.Color.Transparent;
+            this.gpxSAmerica.Controls.Add(this.chkSAmerica);
             this.gpxSAmerica.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.gpxSAmerica.Location = new System.Drawing.Point(168, 304);
             this.gpxSAmerica.Name = "gpxSAmerica";
@@ -98,7 +105,7 @@
             this.chkEurope.Location = new System.Drawing.Point(6, 37);
             this.chkEurope.Name = "chkEurope";
             this.chkEurope.Size = new System.Drawing.Size(15, 14);
-            this.chkEurope.TabIndex = 0;
+            this.chkEurope.TabIndex = 2;
             this.chkEurope.UseVisualStyleBackColor = true;
             // 
             // gpxAsia
@@ -119,12 +126,13 @@
             this.chkAsia.Location = new System.Drawing.Point(7, 38);
             this.chkAsia.Name = "chkAsia";
             this.chkAsia.Size = new System.Drawing.Size(15, 14);
-            this.chkAsia.TabIndex = 0;
+            this.chkAsia.TabIndex = 3;
             this.chkAsia.UseVisualStyleBackColor = true;
             // 
             // gpxAfrica
             // 
             this.gpxAfrica.BackColor = System.Drawing.Color.Transparent;
+            this.gpxAfrica.Controls.Add(this.chkAfrica);
             this.gpxAfrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.gpxAfrica.Location = new System.Drawing.Point(391, 290);
             this.gpxAfrica.Name = "gpxAfrica";
@@ -146,6 +154,7 @@
             // gpxAustralia
             // 
             this.gpxAustralia.BackColor = System.Drawing.Color.Transparent;
+            this.gpxAustralia.Controls.Add(this.chkAustralia);
             this.gpxAustralia.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.gpxAustralia.Location = new System.Drawing.Point(733, 372);
             this.gpxAustralia.Name = "gpxAustralia";
@@ -171,6 +180,34 @@
             this.btnInfo.TabIndex = 7;
             this.btnInfo.Text = "Info";
             this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // chkSAmerica
+            // 
+            this.chkSAmerica.AutoSize = true;
+            this.chkSAmerica.Location = new System.Drawing.Point(7, 68);
+            this.chkSAmerica.Name = "chkSAmerica";
+            this.chkSAmerica.Size = new System.Drawing.Size(15, 14);
+            this.chkSAmerica.TabIndex = 1;
+            this.chkSAmerica.UseVisualStyleBackColor = true;
+            // 
+            // chkAfrica
+            // 
+            this.chkAfrica.AutoSize = true;
+            this.chkAfrica.Location = new System.Drawing.Point(7, 38);
+            this.chkAfrica.Name = "chkAfrica";
+            this.chkAfrica.Size = new System.Drawing.Size(15, 14);
+            this.chkAfrica.TabIndex = 4;
+            this.chkAfrica.UseVisualStyleBackColor = true;
+            // 
+            // chkAustralia
+            // 
+            this.chkAustralia.AutoSize = true;
+            this.chkAustralia.Location = new System.Drawing.Point(7, 38);
+            this.chkAustralia.Name = "chkAustralia";
+            this.chkAustralia.Size = new System.Drawing.Size(15, 14);
+            this.chkAustralia.TabIndex = 5;
+            this.chkAustralia.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -193,10 +230,16 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.gpxNAmerica.ResumeLayout(false);
             this.gpxNAmerica.PerformLayout();
+            this.gpxSAmerica.ResumeLayout(false);
+            this.gpxSAmerica.PerformLayout();
             this.gpxEurope.ResumeLayout(false);
             this.gpxEurope.PerformLayout();
             this.gpxAsia.ResumeLayout(false);
             this.gpxAsia.PerformLayout();
+            this.gpxAfrica.ResumeLayout(false);
+            this.gpxAfrica.PerformLayout();
+            this.gpxAustralia.ResumeLayout(false);
+            this.gpxAustralia.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +258,9 @@
         private System.Windows.Forms.GroupBox gpxAustralia;
         private System.Windows.Forms.Button btnFortify;
         private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.CheckBox chkSAmerica;
+        private System.Windows.Forms.CheckBox chkAfrica;
+        private System.Windows.Forms.CheckBox chkAustralia;
     }
 }
 

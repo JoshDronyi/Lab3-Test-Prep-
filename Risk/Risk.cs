@@ -15,6 +15,7 @@ namespace Risk
         {
             Board = new RiskBoard();
             Players = new List<Player>(numPlayers);
+            Board.init();
         }
 
         public void init()

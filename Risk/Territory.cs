@@ -20,8 +20,8 @@ namespace Risk
 
         public string PrintInfo()
         {
-            return ("Name: " + Name + "\n" +
-                   "Owner: " + Owner.Name);
+            return ("Name:  " + Name + "\n" +
+                    "Owner: " + Owner.Name + "\n" );
         }
     }
 }

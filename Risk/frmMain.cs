@@ -13,11 +13,15 @@ namespace Risk
     public partial class frmMain : Form
     {
         public Risk game = new Risk(2);
-        //GroupBox selected;
                    
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void DrawUnit(PaintEventArgs e)
+        {
+            Pen myPen;
         }
 
         private void LoadPieces()
@@ -25,7 +29,7 @@ namespace Risk
             foreach (GroupBox g in this.Controls)
             {
                 if (game.Board.Territories[g.TabIndex].StandingArmy != null) {
-                    //g.TabIndex
+                    PictureBox p = new PictureBox();
                 }
             }
         }
@@ -73,6 +77,46 @@ namespace Risk
         private void btnAttack_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e) 
+        {
+            /*
+            try 
+            {
+                foreach (Control g in this.Controls)
+                {
+                    MessageBox.Show(g.TabIndex.ToString());
+                    if (g is GroupBox) 
+                    {
+                        MessageBox.Show(g.ToString());
+                        foreach (CheckBox c in g.Controls)
+                        {
+                            MessageBox.Show(c.ToString());
+                            if (c.Checked)
+                            {
+                                MessageBox.Show(game.Board.Territories[0].PrintInfo());
+                            }
+                        }
+                    }                    
+                }
+            }
+            catch (InvalidCastException i)
+            {
+                MessageBox.Show("Error, " + i.ToString());
+            }
+             */
+            MessageBox.Show(game.Board.Territories[0].PrintInfo());
+            /*
+            try
+            {
+                
+            }
+            catch
+            {
+                MessageBox.Show("Please select a territory before using this button.");
+            }     
+             */
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Risk
     public partial class frmMain : Form
     {
         public Risk game = new Risk(2);
+        // make something where home territory translates to a color
                    
         public frmMain()
         {

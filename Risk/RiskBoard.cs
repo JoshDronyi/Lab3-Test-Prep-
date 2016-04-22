@@ -65,9 +65,12 @@ namespace Risk
 
         public void AnnexTerritory(Player player, Territory playerBase, Territory target)
         {
-            target.Owner = player;
-            target.StandingArmy = playerBase.StandingArmy;
-            playerBase.StandingArmy = null;
+            if (Connected(playerBase, target) == true)
+            {
+                target.Owner = player;
+                target.StandingArmy = playerBase.StandingArmy;
+                playerBase.StandingArmy = null;
+            }           
         }
 
         public void InvadeTerritory(Player attacker, Player defender, Territory attackerBase, Territory target)

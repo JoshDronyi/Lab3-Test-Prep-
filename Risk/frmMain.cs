@@ -99,13 +99,13 @@ namespace Risk
                         if (c is CheckBox)
                         {
                             CheckBox x = (CheckBox) c;
-                            if (x.Checked && game.Board.Territories[g.TabIndex].Owner == game.getCurrentPlayer())
+                            if (x.Checked && game.Board.Territories[g.TabIndex].Owner == game.getCurrentPlayer() && game.Board.Territories[g.TabIndex].StandingArmy != null)
                             {
-                                Attacker = game.getCurrentPlayer();
+                                Attacker = game.Board.Territories[g.TabIndex].Owner;
                                 Base = game.Board.Territories[g.TabIndex];
                                 //MessageBox.Show("made it in the first if, " + Attacker.ToString());
                             }
-                            else if (x.Checked && game.Board.Territories[g.TabIndex].Owner != game.getCurrentPlayer())
+                            else if (x.Checked && (game.Board.Territories[g.TabIndex].Owner != game.getCurrentPlayer() || game.Board.Territories[g.TabIndex].StandingArmy == null))
                             {
                                 Target = game.Board.Territories[g.TabIndex];
                                 //MessageBox.Show("made it in the beginning of else-if");
@@ -124,14 +124,21 @@ namespace Risk
                     }
                 }
             }
-
-            if (Target.Owner == null)
+            if (Target.Owner == Attacker && Target.StandingArmy == null)
+            {
+                game.Board.MoveArmy(Base, Target);
+            }
+            else if (Target.Owner == null)
             {
                 game.Board.AnnexTerritory(Attacker, Base, Target);
             }
-            if (Target.Owner == Defender)
+            else if (Target.Owner == Defender)
             {
                 game.Board.InvadeTerritory(Attacker, Defender, Base, Target);
+            }
+            else
+            {
+
             }
             
             LoadPieces();

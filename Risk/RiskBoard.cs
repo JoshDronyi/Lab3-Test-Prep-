@@ -59,8 +59,17 @@ namespace Risk
         {
             // basically here we'll get each index value (ex. france is 3, germany is 4)
             // NeighborMatrix[3, 4] is true, therefore Connected(Territories<3>, Territories<4>) will return true
-            //return NeighborMatrix[Territories.IndexOf(a), Territories.IndexOf(b)];
-            return true;
+            return NeighborMatrix[Territories.IndexOf(a), Territories.IndexOf(b)];
+            //return true;
+        }
+
+        public void MoveArmy(Territory armyLocation, Territory armyTarget)
+        {
+            if (Connected(armyLocation, armyTarget) == true)
+            {
+                armyTarget.StandingArmy = armyLocation.StandingArmy;
+                armyLocation.StandingArmy = null;
+            }
         }
 
         public void AnnexTerritory(Player player, Territory playerBase, Territory target)
@@ -68,14 +77,13 @@ namespace Risk
             if (Connected(playerBase, target) == true)
             {
                 target.Owner = player;
-                target.StandingArmy = playerBase.StandingArmy;
-                playerBase.StandingArmy = null;
+                MoveArmy(playerBase, target);
             }           
         }
 
         public void InvadeTerritory(Player attacker, Player defender, Territory attackerBase, Territory target)
         {
-
+            
         }
     }
 }

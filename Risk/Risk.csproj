@@ -46,6 +46,12 @@
   <ItemGroup>
     <Compile Include="Army.cs" />
     <Compile Include="Die.cs" />
+    <Compile Include="frmBattle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBattle.Designer.cs">
+      <DependentUpon>frmBattle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     <Compile Include="RiskBoard.cs" />
     <Compile Include="Territory.cs" />
     <Compile Include="Unit.cs" />
+    <EmbeddedResource Include="frmBattle.resx">
+      <DependentUpon>frmBattle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

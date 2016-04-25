@@ -81,9 +81,20 @@ namespace Risk
             }           
         }
 
-        public void InvadeTerritory(Player attacker, Player defender, Territory attackerBase, Territory target)
+        public void InvadeTerritory(Player attacker, Player defender, Territory attackerBase, Territory target, Boolean result)
         {
-            
+            if (Connected(attackerBase, target) == true)
+            {
+                if (result)
+                {
+                    target.Owner = attacker;
+                    MoveArmy(attackerBase, target);                    
+                }
+                else
+                {
+                    attackerBase.StandingArmy = null;
+                }
+            }
         }
     }
 }

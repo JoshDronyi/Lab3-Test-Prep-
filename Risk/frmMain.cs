@@ -110,7 +110,7 @@ namespace Risk
                                 Target = game.Board.Territories[g.TabIndex];
                                 //MessageBox.Show("made it in the beginning of else-if");
 
-                                if (game.Board.Territories[g.TabIndex].Owner != null)
+                                if (game.Board.Territories[g.TabIndex].Owner != game.getCurrentPlayer())
                                 {
                                     Defender = game.Board.Territories[g.TabIndex].Owner;
                                     //MessageBox.Show("made it in the first if of the else if");
@@ -126,15 +126,20 @@ namespace Risk
             }
             if (Target.Owner == Attacker && Target.StandingArmy == null)
             {
+                //MessageBox.Show(Attacker.ToString(), Defender.ToString());
                 game.Board.MoveArmy(Base, Target);
             }
-            else if (Target.Owner == null)
+            else if (Target.Owner == null || (Target.Owner != null && Target.StandingArmy == null))
             {
+                //MessageBox.Show(Attacker.ToString(), Defender.ToString());
                 game.Board.AnnexTerritory(Attacker, Base, Target);
             }
             else if (Target.Owner == Defender)
             {
-                game.Board.InvadeTerritory(Attacker, Defender, Base, Target);
+                MessageBox.Show(Attacker.Name.ToString(), Defender.Name.ToString());
+                frmBattle battle = new frmBattle();
+                battle.Show();
+                game.Board.InvadeTerritory(Attacker, Defender, Base, Target, battle.BattleResult());
             }
             else
             {

@@ -8,7 +8,7 @@ namespace Risk
 {
     public class Territory
     {
-        private string Name { get; set; }
+        public string Name { get; set; }
         //public Enum Continent { get; set; }
         public Player Owner { get; set; }
         public Army StandingArmy { get; set; }

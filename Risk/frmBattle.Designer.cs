@@ -28,23 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRoll = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblAttacker = new System.Windows.Forms.Label();
             this.lblDefender = new System.Windows.Forms.Label();
             this.lblAttackRoll = new System.Windows.Forms.Label();
             this.lblDefenseRoll = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnRoll
-            // 
-            this.btnRoll.Location = new System.Drawing.Point(104, 197);
-            this.btnRoll.Name = "btnRoll";
-            this.btnRoll.Size = new System.Drawing.Size(75, 23);
-            this.btnRoll.TabIndex = 0;
-            this.btnRoll.Text = "Roll!";
-            this.btnRoll.UseVisualStyleBackColor = true;
-            this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 
             // btnClose
             // 
@@ -54,6 +43,7 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close!";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblAttacker
             // 
@@ -103,7 +93,6 @@
             this.Controls.Add(this.lblDefender);
             this.Controls.Add(this.lblAttacker);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnRoll);
             this.Name = "frmBattle";
             this.Text = "frmBattle";
             this.ResumeLayout(false);
@@ -112,8 +101,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnRoll;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblAttacker;
         private System.Windows.Forms.Label lblDefender;

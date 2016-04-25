@@ -12,17 +12,19 @@ namespace Risk
         public int HomeTerritory { get; set; }
         public List<Territory> playerTerritories { get; set; }
         public List<Army> ArmyList { get; set; }
-        Random random = new Random(1);
+        public Boolean Alive;
+        Random random = new Random();
 
         public Player()
         {
         }
 
-        public Player(string n, int h) 
+        public Player(string n, int h, Boolean a) 
         {
             this.Name = n;
             this.HomeTerritory = h;
             ArmyList = new List<Army>();
+            this.Alive = a;
         }
          enum unitType
         {
@@ -45,19 +47,19 @@ namespace Risk
             return gotIt;
         }
 
-        public Die[] Attack()
+        public int[] Attack()
         {
-            Die[] rollResults = new Die[3];
+            int[] rollResults = new int[3];
 
             // Create Die Objects
-            Die firstDie = new Die();
-            Die secondDie = new Die();
-            Die thirdDie = new Die();
+            //Die firstDie = new Die();
+            //Die secondDie = new Die();
+            //Die thirdDie = new Die();
 
             //roll three Die since the plaer is defending
-            firstDie.Face = random.Next(1, 7);
-            secondDie.Face = random.Next(1, 7);
-            thirdDie.Face = random.Next(1, 7);
+            int firstDie = random.Next(1, 7);
+            int secondDie = random.Next(1, 7);
+            int thirdDie = random.Next(1, 7);
 
             //store the results in a results array
             rollResults[0] = firstDie;
@@ -67,17 +69,17 @@ namespace Risk
             return rollResults;
         }
 
-        public Die[] Defend()
+        public int[] Defend()
         {
-            Die[] rollResults = new Die[2];
+            int[] rollResults = new int[2];
 
             //Create Die objects
-            Die firstDie = new Die();
-            Die secondDie = new Die();
+            //Die firstDie = new Die();
+            //Die secondDie = new Die();
 
             //roll two Die since the player is attacking
-            firstDie.Face = random.Next(1, 7);
-            secondDie.Face = random.Next(1, 7);
+            int firstDie = random.Next(1, 7);
+            int secondDie = random.Next(1, 7);
 
             //put the results of the Die in results array
             rollResults[0] = firstDie;

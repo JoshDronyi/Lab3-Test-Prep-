@@ -17,8 +17,26 @@ namespace Risk
         public frmBattle()
         {
             InitializeComponent();
-            lblAttackRoll.Text = "Die 1: \nDie 2: \nDie 3: ";
-            lblDefenseRoll.Text = "Die 1: \nDie 2: ";
+
+            Player emptyPlayer = new Player();
+
+            int[] attackRoll = emptyPlayer.Attack();
+            int[] defendRoll = emptyPlayer.Defend();
+
+            if (attackRoll[0] > defendRoll[0])
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+
+            lblAttackRoll.Text = "Die 1: " + attackRoll[0].ToString() + "\n" +
+                                 "Die 2: " + attackRoll[1].ToString() + "\n" +
+                                 "Die 3: " + attackRoll[2].ToString();
+            lblDefenseRoll.Text = "Die 1: " + defendRoll[0].ToString() + "\n" +
+                                  "Die 2: " + defendRoll[1].ToString();
         }
 
         public Boolean BattleResult()
@@ -28,25 +46,13 @@ namespace Risk
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
-            Player emptyPlayer = new Player();
 
-            Die[] attackRoll = emptyPlayer.Attack();
-            Die[] defendRoll = emptyPlayer.Defend();
+        }
 
-            if (attackRoll[0].Face > defendRoll[0].Face)
-            {
-                result = true;
-            }
-            else
-            {
-                result = false;
-            }
-
-            lblAttackRoll.Text = "Die 1: " + attackRoll[0].Face.ToString() + "\n" +
-                                 "Die 2: " + attackRoll[1].Face.ToString() + "\n" +
-                                 "Die 3: " + attackRoll[2].Face.ToString();
-            lblDefenseRoll.Text = "Die 1: " + defendRoll[0].Face.ToString() + "\n" +
-                                  "Die 2: " + defendRoll[1].Face.ToString();
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            //frmMain.game.Board.InvadeTerritory(Attacker, Defender, Base, Target, battle.BattleResult());
+            this.Close();
         }
     }
 }

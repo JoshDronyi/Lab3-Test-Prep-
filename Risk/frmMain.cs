@@ -12,12 +12,17 @@ namespace Risk
 {
     public partial class frmMain : Form
     {
-        public Risk game = new Risk(2);
+        public Risk game;
+        public Color[] EmpireColor = { Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Yellow, Color.Pink };
         // make something where home territory translates to a color
                    
         public frmMain()
         {
+            frmMenu menu = new frmMenu();
+            menu.ShowDialog();
             InitializeComponent();
+
+            game = new Risk(menu.getNumPlayers());
             game.init();
             LoadPieces();
         }
@@ -35,17 +40,24 @@ namespace Risk
                             PictureBox pictureBox = new PictureBox();
                             pictureBox.Size = new Size(25, 25);
                             pictureBox.BorderStyle = BorderStyle.FixedSingle;
-                            pictureBox.BackColor = Color.Red;
+                            pictureBox.BackColor = EmpireColor[game.Board.Territories[g.TabIndex].Owner.HomeTerritory];
                             pictureBox.Location = new Point((g.Width / 2), (g.Height / 2)); ;
                             g.Controls.Add(pictureBox);
                         }
-                        if (game.Board.Territories[g.TabIndex].StandingArmy == null && g.HasChildren)
+                        if (g.HasChildren)
                         {
                             foreach (Control c in g.Controls)
                             {
                                 if (c is PictureBox)
                                 {
-                                    g.Controls.Remove(c);
+                                    if (c.BackColor != EmpireColor[game.Board.Territories[g.TabIndex].Owner.HomeTerritory])
+                                    {
+                                        c.BackColor = EmpireColor[game.Board.Territories[g.TabIndex].Owner.HomeTerritory];
+                                    }
+                                    if (game.Board.Territories[g.TabIndex].StandingArmy == null)
+                                    {
+                                        g.Controls.Remove(c);
+                                    }                     
                                 }
                             }
                         }
@@ -74,8 +86,15 @@ namespace Risk
                         if (c is CheckBox)
                         {
                             CheckBox x = (CheckBox)c;
-
                             x.Checked = false;
+                        }
+                        if (c is PictureBox)
+                        {
+                            PictureBox x = (PictureBox)c;
+                            if (game.Board.Territories[g.TabIndex].StandingArmy == null)
+                            {
+                                x.Visible = false;
+                            }
                         }
                     }
                 }
@@ -124,58 +143,83 @@ namespace Risk
                     }
                 }
             }
-            if (Target.Owner == Attacker && Target.StandingArmy == null)
+            if (Attacker.Name == null || Base.Owner == null || Target.Name == null || Attacker != game.getCurrentPlayer())
             {
-                //MessageBox.Show(Attacker.ToString(), Defender.ToString());
-                game.Board.MoveArmy(Base, Target);
-            }
-            else if (Target.Owner == null || (Target.Owner != null && Target.StandingArmy == null))
-            {
-                //MessageBox.Show(Attacker.ToString(), Defender.ToString());
-                game.Board.AnnexTerritory(Attacker, Base, Target);
-            }
-            else if (Target.Owner == Defender)
-            {
-                MessageBox.Show(Attacker.Name.ToString(), Defender.Name.ToString());
-                frmBattle battle = new frmBattle();
-                battle.Show();
-                game.Board.InvadeTerritory(Attacker, Defender, Base, Target, battle.BattleResult());
+                MessageBox.Show("Invalid Input");
+                ToggleCheckboxes();
             }
             else
             {
+                if (Target.Owner == Attacker && Target.StandingArmy == null)
+                {
+                    //MessageBox.Show(Attacker.ToString(), Defender.ToString());
+                    game.Board.MoveArmy(Base, Target);
+                }
+                else if (Target.Owner == null || (Target.Owner != null && Target.StandingArmy == null))
+                {
+                    //MessageBox.Show(Attacker.ToString(), Defender.ToString());
+                    game.Board.AnnexTerritory(Attacker, Base, Target);
+                }
+                else if (Target.Owner == Defender)
+                {
+                    //MessageBox.Show(Attacker.Name.ToString(), Defender.Name.ToString());
+                    frmBattle battle = new frmBattle();
+                    Boolean result = battle.BattleResult();
+                    battle.ShowDialog();
+                    game.Board.InvadeTerritory(Attacker, Defender, Base, Target, result);
+                }
+                else
+                {
 
+                }
+                EndTurn();
+            }            
+        }
+
+        private void EndTurn()
+        {
+            game.CheckPlayers();
+
+            if (game.EndGame())
+            {
+                MessageBox.Show("You Win!");
+                Application.Restart();
             }
-            
+
+            game.PlayerTurn();
             LoadPieces();
             ToggleCheckboxes();
+            MessageBox.Show("Current Turn: " + game.getCurrentPlayer().Name.ToString());
         }
 
         private void btnInfo_Click(object sender, EventArgs e) 
         {
-            try 
+            frmStatistics myStat = new frmStatistics(game.Board.Territories);
+            myStat.ShowDialog();
+        }
+
+        private void btnFortify_Click(object sender, EventArgs e)
+        {
+            foreach (Control g in this.Controls)
             {
-                foreach (Control g in this.Controls)
+                if (g is GroupBox)
                 {
-                    if (g is GroupBox) 
+                    foreach (Control c in g.Controls)
                     {
-                        foreach (Control c in g.Controls)
+                        if (c is CheckBox)
                         {
-                            if (c is CheckBox)
+                            CheckBox x = (CheckBox)c;
+                            if (x.Checked && game.Board.Territories[g.TabIndex].StandingArmy == null)
                             {
-                                CheckBox x = (CheckBox) c;
-                                if (x.Checked)
-                                {
-                                    MessageBox.Show(game.Board.Territories[g.TabIndex].PrintInfo());
-                                    x.Checked = false;
-                                }                                
+                                Army newArmy = new Army();
+                                game.getCurrentPlayer().ArmyList.Add(newArmy);
+                                game.Board.Territories[g.TabIndex].StandingArmy = newArmy;
+                                //x.Checked = false;
+                                EndTurn();
                             }
                         }
-                    }                    
+                    }
                 }
-            }
-            catch (InvalidCastException i)
-            {
-                MessageBox.Show("Error, " + i.ToString());
             }
         }
     }

@@ -209,13 +209,17 @@ namespace Risk
                         if (c is CheckBox)
                         {
                             CheckBox x = (CheckBox)c;
-                            if (x.Checked && game.Board.Territories[g.TabIndex].StandingArmy == null)
+                            if (x.Checked && game.Board.Territories[g.TabIndex].StandingArmy == null && game.Board.Territories[g.TabIndex].Owner == game.getCurrentPlayer())
                             {
                                 Army newArmy = new Army();
                                 game.getCurrentPlayer().ArmyList.Add(newArmy);
                                 game.Board.Territories[g.TabIndex].StandingArmy = newArmy;
                                 //x.Checked = false;
                                 EndTurn();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid Input!");
                             }
                         }
                     }

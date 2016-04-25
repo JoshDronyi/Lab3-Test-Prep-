@@ -19,3 +19,4 @@ C:\Users\tue95606\Documents\Visual Studio 2012\Projects\Risk\Risk\bin\Debug\Risk
 C:\Users\telec_000\Documents\Visual Studio 2015\Projects\Risk\Risk\obj\Debug\Risk.frmBattle.resources
 C:\Users\telec_000\Documents\Visual Studio 2015\Projects\Risk\Risk\obj\Debug\Risk.frmMenu.resources
 C:\Users\telec_000\Documents\Visual Studio 2015\Projects\Risk\Risk\obj\Debug\Risk.frmStatistics.resources
+C:\Users\telec_000\Documents\Visual Studio 2015\Projects\Risk\Risk\obj\Debug\Risk.frmHelp.resources

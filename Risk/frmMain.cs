@@ -222,5 +222,11 @@ namespace Risk
                 }
             }
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            frmHelp help = new frmHelp();
+            help.ShowDialog();
+        }
     }
 }

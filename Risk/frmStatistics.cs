@@ -29,7 +29,7 @@ namespace Risk
         {
             for (int i = 0; i < myT.Count; i++)
             {
-                lblInfo.Text += myT[i].Name.ToString() + "\n" + myT[i].Owner.Name.ToString() + "\n \n";
+                lblInfo.Text += myT[i].PrintInfo() + "\n \n";
             }
         }
     }

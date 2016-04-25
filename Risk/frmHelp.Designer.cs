@@ -1,6 +1,6 @@
 ﻿namespace Risk
 {
-    partial class frmStatistics
+    partial class frmHelp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblInfo = new System.Windows.Forms.Label();
+            this.lblHelpText = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblInfo
+            // lblHelpText
             // 
-            this.lblInfo.Location = new System.Drawing.Point(13, 13);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(259, 319);
-            this.lblInfo.TabIndex = 0;
+            this.lblHelpText.Location = new System.Drawing.Point(13, 13);
+            this.lblHelpText.Name = "lblHelpText";
+            this.lblHelpText.Size = new System.Drawing.Size(370, 284);
+            this.lblHelpText.TabIndex = 0;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(103, 335);
+            this.btnClose.Location = new System.Drawing.Point(160, 300);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close!";
+            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmStatistics
+            // frmHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 370);
+            this.ClientSize = new System.Drawing.Size(395, 335);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.lblInfo);
-            this.Name = "frmStatistics";
-            this.Text = "frmStatistics";
-            this.Load += new System.EventHandler(this.frmStatistics_Load);
+            this.Controls.Add(this.lblHelpText);
+            this.Name = "frmHelp";
+            this.Text = "frmHelp";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Label lblHelpText;
         private System.Windows.Forms.Button btnClose;
     }
 }

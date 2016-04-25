@@ -44,6 +44,7 @@
             this.chkAustralia = new System.Windows.Forms.CheckBox();
             this.btnFortify = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.gpxNAmerica.SuspendLayout();
             this.gpxSAmerica.SuspendLayout();
             this.gpxEurope.SuspendLayout();
@@ -209,6 +210,16 @@
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(12, 418);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 8;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +227,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(945, 563);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnFortify);
             this.Controls.Add(this.gpxAustralia);
@@ -261,6 +273,7 @@
         private System.Windows.Forms.CheckBox chkSAmerica;
         private System.Windows.Forms.CheckBox chkAfrica;
         private System.Windows.Forms.CheckBox chkAustralia;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 

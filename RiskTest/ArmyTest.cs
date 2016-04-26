@@ -1,4 +1,4 @@
-﻿using Risk;
+using Risk;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -169,7 +169,7 @@ namespace RiskTest
 
             for (int i = 0; i < testArmy.Strength; i++)
             {
-                Unit u = (Unit) testArmy.armyUnits[i];
+                Unit u = (Unit) testArmy[i];
 
                 if(u.UnitType == Convert.ToInt32(Army.unitType.infantry))
                 {
@@ -183,17 +183,7 @@ namespace RiskTest
 
 
             testArmy.BreakArtillary();
-
-            
-
-
-
-             
-
-
-
-
-            
+ 
 
         }
 
@@ -227,88 +217,7 @@ namespace RiskTest
             Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
 
-        /// <summary>
-        ///A test for Army Constructor
-        ///</summary>
-        [TestMethod()]
-        public void ArmyConstructorTest1()
-        {
-            Army target = new Army();
-            Assert.Inconclusive("TODO: Implement code to verify target");
-        }
-
-        /// <summary>
-        ///A test for AddArtillary
-        ///</summary>
-        [TestMethod()]
-        public void AddArtillaryTest1()
-        {
-            Army target = new Army(); // TODO: Initialize to an appropriate value
-            target.AddArtillary();
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
-        }
-
-        /// <summary>
-        ///A test for AddCalvary
-        ///</summary>
-        [TestMethod()]
-        public void AddCalvaryTest1()
-        {
-            Army target = new Army(); // TODO: Initialize to an appropriate value
-            target.AddCalvary();
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
-        }
-
-        /// <summary>
-        ///A test for AddInfantry
-        ///</summary>
-        [TestMethod()]
-        public void AddInfantryTest1()
-        {
-            Army target = new Army(); // TODO: Initialize to an appropriate value
-            target.AddInfantry();
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
-        }
-
-        /// <summary>
-        ///A test for BreakArtillary
-        ///</summary>
-        [TestMethod()]
-        public void BreakArtillaryTest1()
-        {
-            Army target = new Army(); // TODO: Initialize to an appropriate value
-            List<Unit> expected = null; // TODO: Initialize to an appropriate value
-            List<Unit> actual;
-            actual = target.BreakArtillary();
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
-
-        /// <summary>
-        ///A test for BreakCalvary
-        ///</summary>
-        [TestMethod()]
-        public void BreakCalvaryTest1()
-        {
-            Army target = new Army(); // TODO: Initialize to an appropriate value
-            List<Unit> expected = null; // TODO: Initialize to an appropriate value
-            List<Unit> actual;
-            actual = target.BreakCalvary();
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
-
-        /// <summary>
- 
-        /// <summary>
-        ///A test for SubtractInfantry
-        ///</summary>
-        [TestMethod()]
-        public void SubtractInfantryTest1()
-        {
-            Army target = new Army(); // TODO: Initialize to an appropriate value
-            target.SubtractInfantry();
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
-        }
+    
+     
     }
 }

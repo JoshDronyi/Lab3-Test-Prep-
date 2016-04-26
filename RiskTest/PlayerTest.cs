@@ -1,7 +1,8 @@
-﻿using Risk;
+using Risk;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace RiskTest
 {
@@ -14,6 +15,7 @@ namespace RiskTest
     [TestClass()]
     public class PlayerTest
     {
+        Player pdawg;
 
 
         private TestContext testContextInstance;
@@ -57,11 +59,12 @@ namespace RiskTest
         //}
         //
         //Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{
-        //}
-        //
+        [TestCleanup()]
+        public void MyTestCleanup()
+        {
+            pdawg = null;
+        }
+        
         #endregion
 
 
@@ -71,8 +74,12 @@ namespace RiskTest
         [TestMethod()]
         public void PlayerConstructorTest()
         {
-            Player target = new Player();
-            Assert.Inconclusive("TODO: Implement code to verify target");
+            pdawg = new Player();
+            Assert.AreEqual(null,pdawg.ArmyList);
+            Assert.AreEqual(null,pdawg.Alive);
+            Assert.AreEqual(null, pdawg.Name);
+            Assert.AreEqual(0,pdawg.HomeTerritory);
+
         }
 
         /// <summary>
@@ -81,11 +88,24 @@ namespace RiskTest
         [TestMethod()]
         public void PlayerConstructorTest1()
         {
-            string n = string.Empty; // TODO: Initialize to an appropriate value
-            int h = 0; // TODO: Initialize to an appropriate value
-            bool a = false; // TODO: Initialize to an appropriate value
-            Player target = new Player(n, h, a);
-            Assert.Inconclusive("TODO: Implement code to verify target");
+            pdawg = new Player();
+            string name = "pdawg";
+            int home = 12;
+            List<Army> ArmyList = new List<Army>();
+            ArmyList.Add(new Army());
+            bool alive = false;
+
+            pdawg.Name = name;
+            pdawg.HomeTerritory = home;
+            pdawg.ArmyList = ArmyList;
+            pdawg.Alive = alive;
+
+
+            Assert.AreSame(ArmyList, pdawg.ArmyList);
+            Assert.AreEqual(1,pdawg.ArmyList.Count);
+            Assert.AreEqual(alive, pdawg.Alive);
+            Assert.AreEqual(name, pdawg.Name);
+            Assert.AreEqual(home, pdawg.HomeTerritory);
         }
 
         /// <summary>
@@ -163,13 +183,26 @@ namespace RiskTest
         [TestMethod()]
         public void ArmyListTest()
         {
-            Player target = new Player(); // TODO: Initialize to an appropriate value
-            List<Army> expected = null; // TODO: Initialize to an appropriate value
-            List<Army> actual;
-            target.ArmyList = expected;
-            actual = target.ArmyList;
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            pdawg = new Player();
+
+            Assert.AreNotEqual(null, pdawg);
+            Assert.AreEqual(null,pdawg.ArmyList);
+
+            Army AfricaArmy = new Army();
+            Army NAmericaArmy = new Army();
+            Army SAmericaArmy = new Army();
+            Army EuropeArmy = new Army();
+
+            pdawg.ArmyList.Add(AfricaArmy);
+            pdawg.ArmyList.Add(NAmericaArmy);
+            pdawg.ArmyList.Add(SAmericaArmy);
+            pdawg.ArmyList.Add(EuropeArmy);
+
+            Assert.AreEqual(4,pdawg.ArmyList.Count);
+
+
+
+
         }
 
         /// <summary>
@@ -178,13 +211,16 @@ namespace RiskTest
         [TestMethod()]
         public void HomeTerritoryTest()
         {
-            Player target = new Player(); // TODO: Initialize to an appropriate value
-            int expected = 0; // TODO: Initialize to an appropriate value
-            int actual;
-            target.HomeTerritory = expected;
-            actual = target.HomeTerritory;
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            pdawg = new Player();
+
+            Assert.AreNotEqual(null, pdawg);
+            Assert.AreEqual(null, pdawg.HomeTerritory);
+
+            pdawg.HomeTerritory = 3;
+
+            Assert.AreEqual(3,pdawg.HomeTerritory);
+
+
         }
 
         /// <summary>
@@ -193,13 +229,14 @@ namespace RiskTest
         [TestMethod()]
         public void NameTest()
         {
-            Player target = new Player(); // TODO: Initialize to an appropriate value
-            string expected = string.Empty; // TODO: Initialize to an appropriate value
-            string actual;
-            target.Name = expected;
-            actual = target.Name;
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            pdawg = new Player();
+
+            Assert.AreNotEqual(null, pdawg);
+            Assert.AreEqual(null, pdawg.Name);
+
+            pdawg.Name = "pdawg";
+
+            Assert.AreEqual("pdawg",pdawg.Name);
         }
 
         /// <summary>
@@ -208,13 +245,23 @@ namespace RiskTest
         [TestMethod()]
         public void playerTerritoriesTest()
         {
-            Player target = new Player(); // TODO: Initialize to an appropriate value
-            List<Territory> expected = null; // TODO: Initialize to an appropriate value
-            List<Territory> actual;
-            target.playerTerritories = expected;
-            actual = target.playerTerritories;
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            pdawg = new Player();
+            Assert.AreNotEqual(null, pdawg);
+            Assert.AreEqual(0,pdawg.playerTerritories.Count);
+
+
+            pdawg.playerTerritories.Add(new Territory("Africa"));
+            pdawg.playerTerritories.Add(new Territory("North America"));
+            pdawg.playerTerritories.Add(new Territory("South America"));
+            pdawg.playerTerritories.Add(new Territory("Europe"));
+
+
+            Assert.AreEqual(4,pdawg.playerTerritories.Count);
+            Assert.AreEqual("Africa", pdawg.playerTerritories[0]);
+            Assert.AreEqual("North America", pdawg.playerTerritories[0]);
+            Assert.AreEqual("South America", pdawg.playerTerritories[0]);
+            Assert.AreEqual("Europe", pdawg.playerTerritories[0]);
+
         }
     }
 }

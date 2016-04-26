@@ -1,0 +1,7 @@
+C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk-Project\RiskTests\bin\Debug\RiskTests.dll
+C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk-Project\RiskTests\bin\Debug\RiskTests.pdb
+C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk-Project\RiskTests\bin\Debug\Risk.exe
+C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk-Project\RiskTests\bin\Debug\Risk.pdb
+C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk-Project\RiskTests\obj\Debug\RiskTests.csprojResolveAssemblyReference.cache
+C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk-Project\RiskTests\obj\Debug\RiskTests.dll
+C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk-Project\RiskTests\obj\Debug\RiskTests.pdb

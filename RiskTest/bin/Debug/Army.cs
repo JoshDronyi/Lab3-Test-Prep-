@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Risk
 {
-    public class Army: IEnumerable
+    public class Army
     {
         private List<Unit> armyUnits = new List<Unit>();
         int actualUnits;
@@ -16,7 +15,7 @@ namespace Risk
         {
             AddInfantry();
         }
-        public enum unitType
+        enum unitType
         {
             infantry = 1,
             calvary = 5,
@@ -101,14 +100,13 @@ namespace Risk
         //Breaks Calvary unit into 5 infantry units
         public List<Unit> BreakCalvary() 
         {
-            int count = 0;
             List<Unit> newInfantry = new List<Unit>();
             for (int i = 0; i < armyUnits.Count; i++ )
             {
                 Unit unit = (Unit)armyUnits[i];
                 if(unit.UnitType == Convert.ToInt32(unitType.calvary))
                 {
-                    
+                    int count = 0;
 
                     while (count < 5) 
                     {
@@ -119,35 +117,28 @@ namespace Risk
                 }
 
             }
-            if (count == 0)
-                throw new Exception("Coundlt find any Calvary.");
             return newInfantry;
         }
         
         //Breaks Artillary unit into 10 infantry units
         public List<Unit> BreakArtillary() 
         {
-            int count = 0;
             List<Unit> newInfantry = new List<Unit>();
             for (int i = 0; i < armyUnits.Count; i++)
             {
-                    Unit unit = (Unit)armyUnits[i];
-                    if (unit.UnitType == Convert.ToInt32(unitType.artillary))
+                Unit unit = (Unit)armyUnits[i];
+                if (unit.UnitType == Convert.ToInt32(unitType.artillary))
+                {
+                    int count = 0;
+
+                    while (count < 10)
                     {
-                        
-
-                        while (count < 10)
-                        {
-                            Unit newUnit = new Unit();
-                            newUnit.UnitType = Convert.ToInt32(unitType.infantry);
-                            newInfantry.Add(newUnit);
-                        }
+                        Unit newUnit = new Unit();
+                        newUnit.UnitType = Convert.ToInt32(unitType.infantry);
+                        newInfantry.Add(newUnit);
                     }
-                
+                }
             }
-
-            if (count == 0)
-                throw new Exception("Couldn't find any Artillary.");
             return newInfantry;
         }
     

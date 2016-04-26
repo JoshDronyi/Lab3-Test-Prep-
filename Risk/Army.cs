@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Risk
 {
-    public class Army: IEnumerable
+    public class Army//: IEnumerable
     {
-        private List<Unit> armyUnits = new List<Unit>();
+        public List<Unit> armyUnits = new List<Unit>();
         int actualUnits;
 
         public Army() 

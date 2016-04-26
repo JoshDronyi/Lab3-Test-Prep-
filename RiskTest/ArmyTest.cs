@@ -169,7 +169,7 @@ namespace RiskTest
 
             for (int i = 0; i < testArmy.Strength; i++)
             {
-                Unit u = (Unit) testArmy[i];
+                Unit u = (Unit) testArmy.armyUnits[i];
 
                 if(u.UnitType == Convert.ToInt32(Army.unitType.infantry))
                 {

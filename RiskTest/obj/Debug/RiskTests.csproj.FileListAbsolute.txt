@@ -1,8 +1,0 @@
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\obj\Debug\RiskTests.csprojResolveAssemblyReference.cache
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\bin\Debug\Army.cs
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\bin\Debug\RiskTest.dll
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\bin\Debug\RiskTest.pdb
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\bin\Debug\Risk.exe
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\bin\Debug\Risk.pdb
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\obj\Debug\RiskTest.dll
-C:\Users\Josh\Documents\Visual Studio 2012\Projects\Risk\RiskTest\obj\Debug\RiskTest.pdb
